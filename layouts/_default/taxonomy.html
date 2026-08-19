@@ -1,0 +1,17 @@
+{{ define "main" }}
+<section class="page-hero">
+  <div class="wrap">
+    <p class="eyebrow">{{ .Data.Plural | humanize }}</p>
+    <h1>{{ .Title }}</h1>
+  </div>
+</section>
+<section class="section">
+  <div class="wrap">
+    <div class="tag-row">
+      {{ range .Pages }}
+      <a class="pill pill-intermediate" href="{{ .RelPermalink }}">{{ .Title }} ({{ len .Pages }})</a>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}

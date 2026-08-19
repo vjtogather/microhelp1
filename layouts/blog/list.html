@@ -1,0 +1,35 @@
+{{ define "main" }}
+<section class="page-hero">
+  <div class="wrap">
+    <p class="eyebrow">Blog</p>
+    <h1>{{ .Title }}</h1>
+    <p class="hero-sub">Deep-dive tutorials on firmware, RTOS, drivers, and hardware bring-up.</p>
+  </div>
+</section>
+<section class="section">
+  <div class="wrap">
+    <div class="card-grid">
+      {{ $paginator := .Paginate (where .Pages "Section" "blog") }}
+      {{ range $paginator.Pages }}
+      <a class="card" href="{{ .RelPermalink }}">
+        <div class="card-thumb">{{ partial "icon-post.html" . }}</div>
+        <div class="card-body">
+          <p class="card-meta">{{ .Date.Format "Jan 2, 2006" }}</p>
+          <h3>{{ .Title }}</h3>
+          <p>{{ .Summary | plainify | truncate 110 }}</p>
+          {{ if or .Params.categories .Params.subcategories }}
+          <div class="tag-row">
+            {{ range .Params.categories }}<span class="pill pill-intermediate">{{ . }}</span>{{ end }}
+            {{ range .Params.subcategories }}<span class="pill pill-free">{{ . }}</span>{{ end }}
+          </div>
+          {{ end }}
+        </div>
+      </a>
+      {{ else }}
+      <p>No posts yet — check back soon.</p>
+      {{ end }}
+    </div>
+    {{ template "_internal/pagination.html" . }}
+  </div>
+</section>
+{{ end }}

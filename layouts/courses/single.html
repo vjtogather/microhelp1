@@ -1,0 +1,49 @@
+{{ define "main" }}
+<article class="post course-single">
+  <header class="post-header">
+    <div class="wrap">
+      <p class="eyebrow"><a href="{{ "/courses/" | relURL }}">Courses</a></p>
+      <h1>{{ .Title }}</h1>
+      <div class="tag-row">
+        {{ if .Params.bestseller }}<span class="pill pill-bestseller">Bestseller</span>{{ end }}
+        {{ with .Params.level }}<span class="pill pill-{{ . | urlize }}">{{ . }}</span>{{ end }}
+        {{ if eq .Params.price "Free" }}<span class="pill pill-free">Free</span>{{ end }}
+      </div>
+      {{ with .Params.rating }}
+      <p class="stars">{{ range seq 5 }}{{ if le . $.Params.rating }}★{{ else }}☆{{ end }}{{ end }}<span class="count">({{ $.Params.reviews | default 5 }})</span></p>
+      {{ end }}
+      <p class="card-meta">
+        {{ with .Params.duration }}{{ . }}{{ end }}
+      </p>
+    </div>
+  </header>
+  <div class="wrap course-layout">
+    <div class="post-content">
+      {{ .Content }}
+      {{ with .Params.lessons }}
+      <h2>Lessons</h2>
+      {{ range . }}
+        {{ $lessonTitle := .title }}
+        <h3>{{ $lessonTitle }}</h3>
+        {{ with .video }}
+        <div class="embed-responsive">
+          <iframe src="https://www.youtube-nocookie.com/embed/{{ . }}" title="{{ $lessonTitle }}" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        {{ end }}
+      {{ end }}
+      {{ end }}
+    </div>
+    <aside class="course-sidebar">
+      {{ with .Params.price }}<p class="course-price">{{ . }}</p>{{ end }}
+      {{ with .Params.syllabus }}
+      <h4>What you'll learn</h4>
+      <ul class="syllabus">
+        {{ range . }}<li>{{ . }}</li>{{ end }}
+      </ul>
+      {{ end }}
+      <a href="mailto:{{ $.Site.Params.email }}?subject=Interested in {{ .Title }}" class="btn btn-primary btn-block">Get Notified</a>
+      <p class="course-note">Enrollment opening soon — drop your email and we'll let you know.</p>
+    </aside>
+  </div>
+</article>
+{{ end }}

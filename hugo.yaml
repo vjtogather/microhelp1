@@ -1,0 +1,52 @@
+baseURL: https://microhelp.in/
+languageCode: en-us
+title: MicroHelp
+theme: ""
+
+pagination:
+  pagerSize: 9
+
+taxonomies:
+  tag: tags
+  category: categories
+  subcategory: subcategories
+
+menu:
+  main:
+    - name: Home
+      url: /
+      weight: 1
+    - name: Blog
+      url: /blog/
+      weight: 2
+    - name: Courses
+      url: /courses/
+      weight: 3
+    - name: About
+      url: /about/
+      weight: 4
+    - name: Contact
+      url: /contact/
+      weight: 5
+    - name: Portfolio
+      url: https://vjtogather.in
+      weight: 6
+
+params:
+  tagline: "Demystifying Embedded Systems, One Line of Code at a Time."
+  description: "MicroHelp is a learning platform for embedded systems engineers — in-depth blog articles and hands-on courses on firmware, RTOS, drivers, and hardware bring-up."
+  logoText: "MicroHelp"
+  email: "hello@microhelp.in"
+  instagram: "https://instagram.com/microhelpin"
+  youtube: "https://youtube.com/@microhelpin"
+  linkedin: "https://linkedin.com/company/microhelp"
+  github: "https://github.com/microhelpin"
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+  highlight:
+    style: dracula
+    lineNos: false
+    noClasses: false

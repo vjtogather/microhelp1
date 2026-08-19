@@ -1,0 +1,61 @@
+backend:
+  name: github
+  repo: YOUR_GITHUB_USERNAME/microhelp # TODO: replace with your GitHub repo, e.g. jeet/microhelp
+  branch: main
+  base_url: https://YOUR_VERCEL_APP.vercel.app # TODO: replace with your Vercel deployment URL
+  auth_endpoint: api/auth
+
+publish_mode: simple
+media_folder: "static/images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "blog"
+    label: "Blog Posts"
+    label_singular: "Blog Post"
+    folder: "content/blog"
+    create: true
+    delete: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Author", name: "author", widget: "string", default: "MicroHelp Team" }
+      - { label: "Summary", name: "summary", widget: "text" }
+      - { label: "Category", name: "categories", widget: "list", required: false, hint: "e.g. Firmware, RTOS, Debugging" }
+      - { label: "Subcategory", name: "subcategories", widget: "list", required: false, hint: "e.g. Bootloader, FreeRTOS, Cortex-M" }
+      - { label: "Tags", name: "tags", widget: "list", required: false }
+      - { label: "Featured video (YouTube video ID)", name: "video", widget: "string", required: false, hint: "Just the ID, e.g. from youtube.com/watch?v=XXXX the XXXX part" }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "courses"
+    label: "Courses"
+    label_singular: "Course"
+    folder: "content/courses"
+    create: true
+    delete: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - label: "Level"
+        name: "level"
+        widget: "select"
+        options: ["Beginner", "Intermediate", "Advanced"]
+      - { label: "Duration", name: "duration", widget: "string", hint: "e.g. 6 weeks" }
+      - { label: "Price", name: "price", widget: "string", hint: "e.g. ₹2,999 or Free" }
+      - { label: "Bestseller badge", name: "bestseller", widget: "boolean", default: false, required: false }
+      - { label: "Rating (1-5)", name: "rating", widget: "number", default: 5, required: false, min: 1, max: 5 }
+      - { label: "Number of reviews", name: "reviews", widget: "number", default: 0, required: false }
+      - { label: "Summary", name: "summary", widget: "text" }
+      - { label: "Feature bullets", name: "features", widget: "list", required: false }
+      - { label: "Syllabus (what you'll learn)", name: "syllabus", widget: "list", required: false }
+      - label: "Lessons"
+        name: "lessons"
+        widget: "list"
+        required: false
+        summary: "{{fields.title}}"
+        fields:
+          - { label: "Lesson title", name: "title", widget: "string" }
+          - { label: "Video (YouTube video ID)", name: "video", widget: "string", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }

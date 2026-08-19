@@ -1,0 +1,40 @@
+{{ define "main" }}
+<section class="page-hero">
+  <div class="wrap">
+    <p class="eyebrow">Courses</p>
+    <h1>{{ .Title }}</h1>
+    <p class="hero-sub">Hands-on, project-based courses to take you from zero to shipping firmware.</p>
+  </div>
+</section>
+<section class="section">
+  <div class="wrap">
+    <div class="card-grid">
+      {{ range $i, $p := .Pages }}
+      <a class="card course-card" href="{{ $p.RelPermalink }}">
+        <div class="card-thumb card-thumb-{{ add (mod $i 6) 1 }}">{{ partial "icon-course.html" $p }}</div>
+        <div class="card-body">
+          <h3>{{ $p.Title }}</h3>
+          <p>{{ $p.Summary | plainify | truncate 110 }}</p>
+          <div class="tag-row">
+            {{ if $p.Params.bestseller }}<span class="pill pill-bestseller">Bestseller</span>{{ end }}
+            {{ with $p.Params.level }}<span class="pill pill-{{ . | urlize }}">{{ . }}</span>{{ end }}
+            {{ if eq $p.Params.price "Free" }}<span class="pill pill-free">Free</span>{{ end }}
+          </div>
+          {{ with $p.Params.rating }}
+          <p class="stars">{{ range seq 5 }}{{ if le . $p.Params.rating }}★{{ else }}☆{{ end }}{{ end }}<span class="count">({{ $p.Params.reviews | default 5 }})</span></p>
+          {{ end }}
+          {{ with $p.Params.features }}
+          <ul class="feature-list">
+            {{ range first 4 . }}<li>{{ . }}</li>{{ end }}
+          </ul>
+          {{ end }}
+          {{ with $p.Params.price }}<p class="card-price">{{ . }}</p>{{ end }}
+        </div>
+      </a>
+      {{ else }}
+      <p>No courses yet — check back soon.</p>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}

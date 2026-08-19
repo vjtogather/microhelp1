@@ -1,0 +1,32 @@
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <div class="footer-col">
+      <div class="logo footer-logo">
+        <img src="{{ "images/brand/logo-mark.svg" | relURL }}" alt="" class="logo-mark-img">
+        <span class="logo-text">Micro<em>Help</em></span>
+      </div>
+      <p class="footer-tagline">{{ .Site.Params.tagline }}</p>
+    </div>
+    <div class="footer-col">
+      <h4>Explore</h4>
+      <ul>
+        {{ range .Site.Menus.main }}
+        <li><a href="{{ .URL | relURL }}">{{ .Name }}</a></li>
+        {{ end }}
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Connect</h4>
+      <ul class="social-links">
+        <li><a href="{{ .Site.Params.instagram }}" target="_blank" rel="noopener">Instagram</a></li>
+        <li><a href="{{ .Site.Params.youtube }}" target="_blank" rel="noopener">YouTube</a></li>
+        <li><a href="{{ .Site.Params.linkedin }}" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="{{ .Site.Params.github }}" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="mailto:{{ .Site.Params.email }}">{{ .Site.Params.email }}</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
+    <p>&copy; {{ now.Year }} {{ .Site.Params.logoText }}. All rights reserved.</p>
+  </div>
+</footer>

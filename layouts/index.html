@@ -1,0 +1,81 @@
+{{ define "main" }}
+<section class="hero">
+  <div class="hero-glow" aria-hidden="true"></div>
+  <div class="wrap">
+    <img src="{{ "images/brand/logo-mark.svg" | relURL }}" alt="" class="hero-mark">
+    <p class="eyebrow">Embedded Systems &middot; Firmware &middot; RTOS</p>
+    <h1>{{ .Site.Params.tagline }}</h1>
+    <p class="hero-sub">{{ .Site.Params.description }}</p>
+    <div class="hero-cta">
+      <a href="{{ "/courses/" | relURL }}" class="btn btn-primary">Browse Courses</a>
+      <a href="{{ "/blog/" | relURL }}" class="btn btn-ghost">Read the Blog</a>
+    </div>
+    <ul class="hero-tags">
+      <li>Firmware</li>
+      <li>RTOS</li>
+      <li>Linux Drivers</li>
+      <li>Hardware Bring-up</li>
+    </ul>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Latest from the Blog</h2>
+      <a href="{{ "/blog/" | relURL }}" class="see-all">See all posts &rarr;</a>
+    </div>
+    <div class="card-grid">
+      {{ range first 3 (where .Site.RegularPages "Section" "blog") }}
+      <a class="card" href="{{ .RelPermalink }}">
+        <div class="card-thumb">{{ partial "icon-post.html" . }}</div>
+        <div class="card-body">
+          <p class="card-meta">{{ .Date.Format "Jan 2, 2006" }}</p>
+          <h3>{{ .Title }}</h3>
+          <p>{{ .Summary | plainify | truncate 110 }}</p>
+        </div>
+      </a>
+      {{ else }}
+      <p>No posts yet — check back soon.</p>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Featured Courses</h2>
+      <a href="{{ "/courses/" | relURL }}" class="see-all">See all courses &rarr;</a>
+    </div>
+    <div class="card-grid">
+      {{ range first 3 (where .Site.RegularPages "Section" "courses") }}
+      <a class="card course-card" href="{{ .RelPermalink }}">
+        <div class="card-thumb">{{ partial "icon-course.html" . }}</div>
+        <div class="card-body">
+          {{ if .Params.level }}<p class="card-meta">{{ .Params.level }}{{ with .Params.duration }} &middot; {{ . }}{{ end }}</p>{{ end }}
+          <h3>{{ .Title }}</h3>
+          <p>{{ .Summary | plainify | truncate 110 }}</p>
+          {{ with .Params.price }}<p class="card-price">{{ . }}</p>{{ end }}
+        </div>
+      </a>
+      {{ else }}
+      <p>No courses yet — check back soon.</p>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+<section class="section newsletter">
+  <div class="wrap newsletter-inner">
+    <div>
+      <h2>Get new articles &amp; course drops in your inbox</h2>
+      <p>No spam. Unsubscribe anytime.</p>
+    </div>
+    <form class="newsletter-form" action="#" method="post">
+      <input type="email" name="email" placeholder="you@example.com" required>
+      <button type="submit" class="btn btn-primary">Subscribe</button>
+    </form>
+  </div>
+</section>
+{{ end }}

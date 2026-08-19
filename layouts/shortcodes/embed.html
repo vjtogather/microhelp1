@@ -1,0 +1,10 @@
+{{ $src := .Get "src" | default (.Get 0) }}
+{{ $ratio := .Get "ratio" | default "16-9" }}
+<div class="embed-responsive embed-ratio-{{ $ratio }}">
+  <iframe
+    src="{{ $src }}"
+    title="{{ .Get "title" | default "Embedded content" }}"
+    loading="lazy"
+    allowfullscreen>
+  </iframe>
+</div>
