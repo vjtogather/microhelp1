@@ -4,7 +4,7 @@ date: 2026-05-18
 categories: ["RTOS"]
 subcategories: ["FreeRTOS"]
 tags: ["RTOS", "FreeRTOS", "C"]
-author: "MicroHelp Team"
+author: "MichroHelp Team"
 summary: "A practical guide to creating, scheduling, and debugging your first task on FreeRTOS — including common pitfalls with stack sizing and priorities."
 ---
 

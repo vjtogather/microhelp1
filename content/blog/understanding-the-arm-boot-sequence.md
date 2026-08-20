@@ -4,7 +4,7 @@ date: 2026-06-02
 categories: ["Firmware"]
 subcategories: ["Bootloader"]
 tags: ["ARM", "Bootloader", "Firmware"]
-author: "MicroHelp Team"
+author: "MichroHelp Team"
 summary: "A walkthrough of what actually happens between power-on and your first line of C code on an ARM SoC — reset vectors, exception levels, and stack setup."
 ---
 

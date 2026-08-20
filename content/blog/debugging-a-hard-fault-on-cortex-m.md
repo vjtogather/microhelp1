@@ -4,7 +4,7 @@ date: 2026-04-27
 categories: ["Debugging"]
 subcategories: ["Cortex-M"]
 tags: ["Cortex-M", "Debugging", "ARM"]
-author: "MicroHelp Team"
+author: "MichroHelp Team"
 summary: "Your board just hard-faulted. Here's a systematic approach to decoding the fault status registers and finding the offending instruction."
 ---
 

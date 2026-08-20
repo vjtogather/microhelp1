@@ -1,6 +1,6 @@
 baseURL: https://michrohelp.in/
 languageCode: en-us
-title: MicroHelp
+title: MichroHelp
 theme: ""
 
 pagination:
@@ -34,13 +34,13 @@ menu:
 
 params:
   tagline: "Demystifying Embedded Systems, One Line of Code at a Time."
-  description: "MicroHelp is a learning platform for embedded systems engineers — in-depth blog articles and hands-on courses on firmware, RTOS, drivers, and hardware bring-up."
-  logoText: "MicroHelp"
+  description: "MichroHelp is a learning platform for embedded systems engineers — in-depth blog articles and hands-on courses on firmware, RTOS, drivers, and hardware bring-up."
+  logoText: "MichroHelp"
   email: "hello@michrohelp.in"
-  instagram: "https://instagram.com/microhelpin"
-  youtube: "https://youtube.com/@microhelpin"
-  linkedin: "https://linkedin.com/company/microhelp"
-  github: "https://github.com/microhelpin"
+  instagram: "https://instagram.com/michrohelpin"
+  youtube: "https://youtube.com/@michrohelpin"
+  linkedin: "https://linkedin.com/company/michrohelp"
+  github: "https://github.com/michrohelpin"
 
 markup:
   goldmark:

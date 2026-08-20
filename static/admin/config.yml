@@ -20,7 +20,7 @@ collections:
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Date", name: "date", widget: "datetime" }
-      - { label: "Author", name: "author", widget: "string", default: "MicroHelp Team" }
+      - { label: "Author", name: "author", widget: "string", default: "MichroHelp Team" }
       - { label: "Summary", name: "summary", widget: "text" }
       - { label: "Category", name: "categories", widget: "list", required: false, hint: "e.g. Firmware, RTOS, Debugging" }
       - { label: "Subcategory", name: "subcategories", widget: "list", required: false, hint: "e.g. Bootloader, FreeRTOS, Cortex-M" }
