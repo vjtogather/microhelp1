@@ -19,7 +19,16 @@
   </div>
 </section>
 
-<section class="section">
+<section class="stats-strip">
+  <div class="wrap stats-grid">
+    <div class="stat"><span class="stat-num">{{ len (where .Site.RegularPages "Section" "courses") }}+</span><span class="stat-label">Courses</span></div>
+    <div class="stat"><span class="stat-num">{{ len (where .Site.RegularPages "Section" "blog") }}+</span><span class="stat-label">Articles</span></div>
+    <div class="stat"><span class="stat-num">40+</span><span class="stat-label">Hours of Content</span></div>
+    <div class="stat"><span class="stat-num">100%</span><span class="stat-label">Hands-on Projects</span></div>
+  </div>
+</section>
+
+<section class="section reveal">
   <div class="wrap">
     <div class="section-head">
       <h2>Latest from the Blog</h2>
@@ -42,7 +51,7 @@
   </div>
 </section>
 
-<section class="section section-alt">
+<section class="section section-alt reveal">
   <div class="wrap">
     <div class="section-head">
       <h2>Featured Courses</h2>
@@ -66,7 +75,7 @@
   </div>
 </section>
 
-<section class="section newsletter">
+<section class="section newsletter reveal">
   <div class="wrap newsletter-inner">
     <div>
       <h2>Get new articles &amp; course drops in your inbox</h2>
