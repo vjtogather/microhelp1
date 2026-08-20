@@ -2,7 +2,7 @@ backend:
   name: github
   repo: vjtogather/microhelp1
   branch: main
-  base_url: https://YOUR_VERCEL_APP.vercel.app # TODO: replace with your Vercel deployment URL
+  base_url: https://microhelp1.vercel.app
   auth_endpoint: api/auth
 
 publish_mode: simple
