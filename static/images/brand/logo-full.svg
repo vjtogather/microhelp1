@@ -1,31 +1,73 @@
-<svg viewBox="0 0 420 190" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 400 480" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <linearGradient id="mhf-blue" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#4fb2ff"/>
       <stop offset="1" stop-color="#0d84ff"/>
     </linearGradient>
+    <linearGradient id="mhf-white" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#c7d2e0"/>
+    </linearGradient>
+    <linearGradient id="mhf-ribbon" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0d84ff"/>
+      <stop offset="0.5" stop-color="#7fd3ff"/>
+      <stop offset="1" stop-color="#0d84ff"/>
+    </linearGradient>
+    <radialGradient id="mhf-badge-glow" cx="0.5" cy="0.35" r="0.75">
+      <stop offset="0" stop-color="#132038"/>
+      <stop offset="1" stop-color="#05070c"/>
+    </radialGradient>
+    <clipPath id="mhf-circle-clip">
+      <circle cx="200" cy="180" r="150"/>
+    </clipPath>
   </defs>
 
+  <!-- badge circle -->
+  <circle cx="200" cy="180" r="154" fill="none" stroke="url(#mhf-blue)" stroke-width="2" opacity="0.5"/>
+  <circle cx="200" cy="180" r="150" fill="url(#mhf-badge-glow)"/>
+
+  <!-- radiating circuit traces -->
   <g stroke="#0d84ff" stroke-width="2.5" stroke-linecap="round" opacity="0.55">
-    <path d="M40 62 H70"/><circle cx="34" cy="62" r="3.2" fill="#0d84ff" stroke="none"/>
-    <path d="M40 100 H70"/><circle cx="34" cy="100" r="3.2" fill="#0d84ff" stroke="none"/>
-    <path d="M380 62 H350"/><circle cx="386" cy="62" r="3.2" fill="#0d84ff" stroke="none"/>
-    <path d="M380 100 H350"/><circle cx="386" cy="100" r="3.2" fill="#0d84ff" stroke="none"/>
+    <path d="M62 110 L30 90"/><circle cx="24" cy="86" r="4" fill="#0d84ff" stroke="none"/>
+    <path d="M50 180 L14 180"/><circle cx="8" cy="180" r="4" fill="#0d84ff" stroke="none"/>
+    <path d="M62 250 L30 270"/><circle cx="24" cy="274" r="4" fill="#0d84ff" stroke="none"/>
+    <path d="M338 110 L370 90"/><circle cx="376" cy="86" r="4" fill="#0d84ff" stroke="none"/>
+    <path d="M350 180 L386 180"/><circle cx="392" cy="180" r="4" fill="#0d84ff" stroke="none"/>
+    <path d="M338 250 L370 270"/><circle cx="376" cy="274" r="4" fill="#0d84ff" stroke="none"/>
   </g>
 
-  <path d="M78 108 L78 44 L120 82" fill="none" stroke="#f5f8ff" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M120 82 L162 44 L162 108" fill="none" stroke="url(#mhf-blue)" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/>
+  <g clip-path="url(#mhf-circle-clip)">
+    <!-- layered M monogram: blue back layer offset for a bevel/3D feel -->
+    <path d="M118 264 L118 132 L200 208 L282 132 L282 264" fill="none" stroke="url(#mhf-blue)" stroke-width="30" stroke-linecap="round" stroke-linejoin="round" opacity="0.9" transform="translate(6,6)"/>
+    <path d="M118 258 L118 126 L200 202 L282 126 L282 258" fill="none" stroke="url(#mhf-white)" stroke-width="30" stroke-linecap="round" stroke-linejoin="round"/>
 
-  <rect x="204" y="18" width="32" height="32" rx="8" fill="#05070c" stroke="url(#mhf-blue)" stroke-width="2"/>
-  <g stroke="url(#mhf-blue)" stroke-width="1.6" stroke-linecap="round">
-    <path d="M204 28 H196"/><path d="M204 40 H196"/>
-    <path d="M236 28 H244"/><path d="M236 40 H244"/>
+    <!-- glossy ribbon banner -->
+    <g transform="rotate(-18 200 180)">
+      <rect x="10" y="205" width="380" height="46" fill="url(#mhf-ribbon)" opacity="0.92"/>
+      <rect x="10" y="205" width="380" height="14" fill="#ffffff" opacity="0.35"/>
+    </g>
   </g>
-  <text x="220" y="41" text-anchor="middle" font-family="SFMono-Regular, Consolas, monospace" font-size="18" font-weight="700" fill="#f5f8ff">M</text>
 
-  <text x="210" y="128" text-anchor="middle" font-family="SFMono-Regular, Consolas, monospace" font-size="40" font-weight="700" letter-spacing="1">
-    <tspan fill="#f5f8ff">MICHRO</tspan><tspan fill="#0d84ff">HELP</tspan>
+  <!-- chip badge -->
+  <rect x="170" y="26" width="60" height="60" rx="14" fill="#05070c" stroke="url(#mhf-blue)" stroke-width="2.5"/>
+  <g stroke="url(#mhf-blue)" stroke-width="2" stroke-linecap="round">
+    <path d="M182 26 V14"/><path d="M200 26 V14"/><path d="M218 26 V14"/>
+    <path d="M182 86 V98"/><path d="M200 86 V98"/><path d="M218 86 V98"/>
+    <path d="M170 40 H158"/><path d="M170 56 H158"/><path d="M170 72 H158"/>
+    <path d="M230 40 H242"/><path d="M230 56 H242"/><path d="M230 72 H242"/>
+  </g>
+  <text x="200" y="65" text-anchor="middle" font-family="SFMono-Regular, Consolas, monospace" font-size="30" font-weight="700" fill="#f5f8ff">M</text>
+
+  <!-- wordmark -->
+  <text x="202" y="412" text-anchor="middle" font-family="SFMono-Regular, Consolas, monospace" font-size="54" font-weight="700" letter-spacing="1" fill="#05070c" opacity="0.5">
+    <tspan>MICHRO</tspan><tspan>HELP</tspan>
+  </text>
+  <text x="200" y="410" text-anchor="middle" font-family="SFMono-Regular, Consolas, monospace" font-size="54" font-weight="700" letter-spacing="1">
+    <tspan fill="url(#mhf-white)">MICHRO</tspan><tspan fill="url(#mhf-blue)">HELP</tspan>
   </text>
 
-  <text x="210" y="152" text-anchor="middle" font-family="SFMono-Regular, Consolas, monospace" font-size="12" letter-spacing="4" fill="#8b96ab">LEARN &#8226; BUILD &#8226; INNOVATE</text>
+  <!-- tagline -->
+  <line x1="70" y1="444" x2="150" y2="444" stroke="#0d84ff" stroke-width="2" opacity="0.7"/>
+  <text x="200" y="450" text-anchor="middle" font-family="SFMono-Regular, Consolas, monospace" font-size="15" letter-spacing="4" fill="#8b96ab">LEARN &#8226; BUILD &#8226; INNOVATE</text>
+  <line x1="250" y1="444" x2="330" y2="444" stroke="#0d84ff" stroke-width="2" opacity="0.7"/>
 </svg>

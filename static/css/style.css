@@ -83,11 +83,10 @@ p { margin: 0 0 1em; color: var(--text); }
 .logo:hover { color: #fff; }
 .logo-text em { color: var(--accent); font-style: normal; }
 .logo-mark-img {
-  height: 34px;
+  height: 44px;
   width: auto;
   display: block;
 }
-.footer-logo .logo-mark-img { height: 40px; }
 
 .site-nav ul {
   list-style: none;
@@ -169,11 +168,12 @@ p { margin: 0 0 1em; color: var(--text); }
 .hero .wrap { position: relative; }
 
 .hero-mark {
-  width: 68px;
-  height: 68px;
-  margin: 0 auto 28px;
+  width: 260px;
+  max-width: 70%;
+  height: auto;
+  margin: 0 auto 12px;
   display: block;
-  filter: drop-shadow(0 0 22px rgba(13, 132, 255, 0.45));
+  filter: drop-shadow(0 0 30px rgba(13, 132, 255, 0.4));
 }
 
 .eyebrow {
