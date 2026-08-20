@@ -1,7 +1,6 @@
 baseURL: https://michrohelp.in/
 languageCode: en-us
 title: MichroHelp
-theme: ""
 
 pagination:
   pagerSize: 9
