@@ -15,11 +15,11 @@
     <div class="footer-col">
       <h4>Connect</h4>
       <ul class="social-links">
-        <li><a href="{{ .Site.Data.settings.instagram }}" target="_blank" rel="noopener">Instagram</a></li>
-        <li><a href="{{ .Site.Data.settings.youtube }}" target="_blank" rel="noopener">YouTube</a></li>
-        <li><a href="{{ .Site.Data.settings.linkedin }}" target="_blank" rel="noopener">LinkedIn</a></li>
-        <li><a href="{{ .Site.Data.settings.github }}" target="_blank" rel="noopener">GitHub</a></li>
-        <li><a href="mailto:{{ .Site.Data.settings.email }}">{{ .Site.Data.settings.email }}</a></li>
+        <li><a href="{{ .Site.Data.settings.instagram }}" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram">{{ partial "icon-social.html" "instagram" }}</a></li>
+        <li><a href="{{ .Site.Data.settings.youtube }}" target="_blank" rel="noopener" aria-label="YouTube" title="YouTube">{{ partial "icon-social.html" "youtube" }}</a></li>
+        <li><a href="{{ .Site.Data.settings.linkedin }}" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">{{ partial "icon-social.html" "linkedin" }}</a></li>
+        <li><a href="{{ .Site.Data.settings.github }}" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub">{{ partial "icon-social.html" "github" }}</a></li>
+        <li><a href="mailto:{{ .Site.Data.settings.email }}" aria-label="Email" title="Email">{{ partial "icon-social.html" "mail" }}</a></li>
       </ul>
     </div>
   </div>
