@@ -41,7 +41,7 @@
         {{ range . }}<li>{{ . }}</li>{{ end }}
       </ul>
       {{ end }}
-      <a href="mailto:{{ $.Site.Params.email }}?subject=Interested in {{ .Title }}" class="btn btn-primary btn-block">Get Notified</a>
+      <a href="mailto:{{ $.Site.Data.settings.email }}?subject=Interested in {{ .Title }}" class="btn btn-primary btn-block">Get Notified</a>
       <p class="course-note">Enrollment opening soon — drop your email and we'll let you know.</p>
     </aside>
   </div>

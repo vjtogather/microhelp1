@@ -31,16 +31,6 @@ menu:
       url: https://vjtogather.in
       weight: 6
 
-params:
-  tagline: "Demystifying Embedded Systems, One Line of Code at a Time."
-  description: "MichroHelp is a learning platform for embedded systems engineers — in-depth blog articles and hands-on courses on firmware, RTOS, drivers, and hardware bring-up."
-  logoText: "MichroHelp"
-  email: "hello@michrohelp.in"
-  instagram: "https://instagram.com/michrohelpin"
-  youtube: "https://youtube.com/@michrohelpin"
-  linkedin: "https://linkedin.com/company/michrohelp"
-  github: "https://github.com/michrohelpin"
-
 markup:
   goldmark:
     renderer:

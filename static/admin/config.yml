@@ -28,6 +28,40 @@ collections:
       - { label: "Featured video (YouTube video ID)", name: "video", widget: "string", required: false, hint: "Just the ID, e.g. from youtube.com/watch?v=XXXX the XXXX part" }
       - { label: "Body", name: "body", widget: "markdown" }
 
+  - name: "pages"
+    label: "Pages"
+    label_singular: "Page"
+    files:
+      - name: "about"
+        label: "About Page"
+        file: "content/about.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
+      - name: "contact"
+        label: "Contact Page"
+        file: "content/contact.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "settings"
+    label: "Site Settings"
+    label_singular: "Setting"
+    files:
+      - name: "general"
+        label: "General Settings"
+        file: "data/settings.yaml"
+        fields:
+          - { label: "Site tagline (homepage headline)", name: "tagline", widget: "string" }
+          - { label: "Site description", name: "description", widget: "text" }
+          - { label: "Logo text", name: "logoText", widget: "string" }
+          - { label: "Contact email", name: "email", widget: "string" }
+          - { label: "Instagram URL", name: "instagram", widget: "string", required: false }
+          - { label: "YouTube URL", name: "youtube", widget: "string", required: false }
+          - { label: "LinkedIn URL", name: "linkedin", widget: "string", required: false }
+          - { label: "GitHub URL", name: "github", widget: "string", required: false }
+
   - name: "courses"
     label: "Courses"
     label_singular: "Course"

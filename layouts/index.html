@@ -2,10 +2,10 @@
 <section class="hero">
   <div class="hero-glow" aria-hidden="true"></div>
   <div class="wrap">
-    <img src="{{ "images/brand/logo-full.png" | relURL }}" alt="{{ .Site.Params.logoText }}" class="hero-mark">
+    <img src="{{ "images/brand/logo-full.png" | relURL }}" alt="{{ .Site.Data.settings.logoText }}" class="hero-mark">
     <p class="eyebrow">Embedded Systems &middot; Firmware &middot; RTOS</p>
-    <h1>{{ .Site.Params.tagline }}</h1>
-    <p class="hero-sub">{{ .Site.Params.description }}</p>
+    <h1>{{ .Site.Data.settings.tagline }}</h1>
+    <p class="hero-sub">{{ .Site.Data.settings.description }}</p>
     <div class="hero-cta">
       <a href="{{ "/courses/" | relURL }}" class="btn btn-primary">Browse Courses</a>
       <a href="{{ "/blog/" | relURL }}" class="btn btn-ghost">Read the Blog</a>
