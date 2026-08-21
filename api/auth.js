@@ -5,7 +5,7 @@ export default function handler(req, res) {
     return;
   }
 
-  const redirectUri = `https://${req.headers.host}/api/callback`;
+  const redirectUri = "https://microhelp1.vercel.app/api/callback";
   const state = Math.random().toString(36).slice(2);
   const authorizeUrl =
     `https://accounts.google.com/o/oauth2/v2/auth` +

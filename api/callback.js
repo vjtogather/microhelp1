@@ -17,7 +17,7 @@ export default async function handler(req, res) {
     return;
   }
 
-  const redirectUri = `https://${req.headers.host}/api/callback`;
+  const redirectUri = "https://microhelp1.vercel.app/api/callback";
 
   const tokenRes = await fetch("https://oauth2.googleapis.com/token", {
     method: "POST",
