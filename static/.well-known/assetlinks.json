@@ -1,0 +1,8 @@
+[{
+      "relation": ["delegate_permission/common.handle_all_urls"],
+      "target": {
+        "namespace": "android_app",
+        "package_name": "in.michrohelp.twa",
+        "sha256_cert_fingerprints": ["1E:18:3D:79:C8:18:72:16:CF:CA:6E:1D:A7:36:B6:C6:CD:F2:03:E4:DB:4D:7F:B4:9A:36:71:E4:CC:97:36:1E"]
+      }
+    }]
