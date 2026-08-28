@@ -1,26 +1,27 @@
 ---
-title: "Embedded C & Firmware Foundations"
+title: Embedded C With STM32
 date: 2026-03-01
-level: "Beginner"
-duration: "6 weeks"
-price: "₹2,999"
+level: Advanced
+duration: 3 Months
+price: ₹4999
+bestseller: true
 rating: 5
 reviews: 32
-bestseller: true
+summary: Start from zero and build real firmware — GPIO, UART, and timer
+  drivers, written and flashed onto real hardware.
 features:
-  - "~6 hours of recorded lectures"
-  - "18 lessons"
-  - "Emulator-based experiments"
-  - "Hardware-based experiments"
-  - "Exercises and coding challenges"
-  - "Certificate on completion"
+  - ~6 hours of recorded lectures
+  - 18 lessons
+  - Emulator-based experiments
+  - Hardware-based experiments
+  - Exercises and coding challenges
+  - Certificate on completion
 syllabus:
   - "C for embedded targets: pointers, memory layout, volatile & const"
-  - "Reading datasheets and register maps"
-  - "GPIO, UART, and timer drivers from scratch"
-  - "Building and flashing with a real toolchain (GCC + OpenOCD)"
-  - "Debugging with a hardware debugger (SWD/JTAG)"
-summary: "Start from zero and build real firmware — GPIO, UART, and timer drivers, written and flashed onto real hardware."
+  - Reading datasheets and register maps
+  - GPIO, UART, and timer drivers from scratch
+  - Building and flashing with a real toolchain (GCC + OpenOCD)
+  - Debugging with a hardware debugger (SWD/JTAG)
 ---
 
 This course is for software engineers who know C but have never touched a microcontroller, and for hobbyists who want a structured, no-fluff path into embedded development.
