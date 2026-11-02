@@ -1,90 +1,58 @@
 {{ define "main" }}
-<section class="hero">
+<section class="hero hero-home">
   <div class="hero-glow" aria-hidden="true"></div>
-  <div class="wrap">
-    <img src="{{ "images/brand/logo-full.png" | relURL }}" alt="{{ .Site.Data.settings.logoText }}" class="hero-mark">
-    <p class="eyebrow">Embedded Systems &middot; Firmware &middot; RTOS</p>
-    <h1>{{ .Site.Data.settings.tagline }}</h1>
-    <p class="hero-sub">{{ .Site.Data.settings.description }}</p>
+  <div class="wrap hero-content">
+    <p class="eyebrow">LEARN · BUILD · INNOVATE</p>
+    <h1>Turn your ideas into <span>real-world technology.</span></h1>
+    <p class="hero-sub">Embedded systems learning, engineering services and practical projects — all in one place.</p>
     <div class="hero-cta">
-      <a href="{{ "/courses/" | relURL }}" class="btn btn-primary">Browse Courses</a>
-      <a href="{{ "/blog/" | relURL }}" class="btn btn-ghost">Read the Blog</a>
+      <a href="{{ "/projects/" | relURL }}" class="btn btn-primary">Explore Projects <span aria-hidden="true">→</span></a>
+      <a href="{{ "/freelancing/" | relURL }}" class="btn btn-ghost">Hire for a Project</a>
     </div>
-    <ul class="hero-tags">
-      <li>Firmware</li>
-      <li>RTOS</li>
-      <li>Linux Drivers</li>
-      <li>Hardware Bring-up</li>
-    </ul>
+    <div class="hero-tags"><span>Embedded Firmware</span><span>RTOS</span><span>Linux Drivers</span><span>IoT & Hardware</span></div>
   </div>
 </section>
 
-<section class="stats-strip">
-  <div class="wrap stats-grid">
-    <div class="stat"><span class="stat-num">{{ len (where .Site.RegularPages "Section" "courses") }}+</span><span class="stat-label">Courses</span></div>
-    <div class="stat"><span class="stat-num">{{ len (where .Site.RegularPages "Section" "blog") }}+</span><span class="stat-label">Articles</span></div>
-    <div class="stat"><span class="stat-num">40+</span><span class="stat-label">Hours of Content</span></div>
-    <div class="stat"><span class="stat-num">100%</span><span class="stat-label">Hands-on Projects</span></div>
-  </div>
-</section>
-
-<section class="section reveal">
+<section class="carousel-section">
   <div class="wrap">
-    <div class="section-head">
-      <h2>Latest from the Blog</h2>
-      <a href="{{ "/blog/" | relURL }}" class="see-all">See all posts &rarr;</a>
+    <div class="carousel-heading"><div><p class="eyebrow">DISCOVER MICR0HELP</p><h2>Learn it. Build it. Ship it.</h2></div><div class="carousel-controls"><button class="carousel-prev" aria-label="Previous slide">←</button><button class="carousel-next" aria-label="Next slide">→</button></div></div>
+    <div class="feature-carousel" data-carousel>
+      <article class="feature-slide slide-learn is-active"><div class="slide-copy"><span class="slide-kicker">01 / LEARN</span><h3>Build strong embedded foundations.</h3><p>Practical courses in Embedded C, STM32, RTOS and Linux.</p><a class="btn btn-primary" href="{{ "/courses/" | relURL }}">Explore courses</a></div><div class="slide-art art-chip"><span>μC</span><i></i><i></i><i></i></div></article>
+      <article class="feature-slide slide-build"><div class="slide-copy"><span class="slide-kicker">02 / BUILD</span><h3>Bring your engineering idea to life.</h3><p>Firmware, IoT, hardware bring-up and custom development.</p><a class="btn btn-primary" href="{{ "/freelancing/" | relURL }}">Work with me</a></div><div class="slide-art art-circuit"><span>BUILD<br>BETTER</span></div></article>
+      <article class="feature-slide slide-buy"><div class="slide-copy"><span class="slide-kicker">03 / BUY</span><h3>Start faster with ready-made projects.</h3><p>Explore project concepts, source packages and documentation.</p><a class="btn btn-primary" href="{{ "/projects/" | relURL }}">Browse projects</a></div><div class="slide-art art-code"><span>{ }</span><small>CODE · TEST · CREATE</small></div></article>
     </div>
-    <div class="card-grid">
-      {{ range first 3 (where .Site.RegularPages "Section" "blog") }}
-      <a class="card" href="{{ .RelPermalink }}">
-        <div class="card-thumb">{{ partial "icon-post.html" . }}</div>
-        <div class="card-body">
-          <p class="card-meta">{{ .Date.Format "Jan 2, 2006" }}</p>
-          <h3>{{ .Title }}</h3>
-          <p>{{ .Summary | plainify | truncate 110 }}</p>
-        </div>
-      </a>
-      {{ else }}
-      <p>No posts yet — check back soon.</p>
-      {{ end }}
-    </div>
+    <div class="carousel-dots" aria-label="Carousel slides"><button class="is-active" aria-label="Show slide 1"></button><button aria-label="Show slide 2"></button><button aria-label="Show slide 3"></button></div>
   </div>
 </section>
 
-<section class="section section-alt reveal">
-  <div class="wrap">
-    <div class="section-head">
-      <h2>Featured Courses</h2>
-      <a href="{{ "/courses/" | relURL }}" class="see-all">See all courses &rarr;</a>
-    </div>
-    <div class="card-grid">
-      {{ range first 3 (where .Site.RegularPages "Section" "courses") }}
-      <a class="card course-card" href="{{ .RelPermalink }}">
-        <div class="card-thumb">{{ partial "icon-course.html" . }}</div>
-        <div class="card-body">
-          {{ if .Params.level }}<p class="card-meta">{{ .Params.level }}{{ with .Params.duration }} &middot; {{ . }}{{ end }}</p>{{ end }}
-          <h3>{{ .Title }}</h3>
-          <p>{{ .Summary | plainify | truncate 110 }}</p>
-          {{ with .Params.price }}<p class="card-price">{{ . }}</p>{{ end }}
-        </div>
-      </a>
-      {{ else }}
-      <p>No courses yet — check back soon.</p>
-      {{ end }}
-    </div>
-  </div>
-</section>
+<section class="stats-strip"><div class="wrap stats-grid">
+  <div class="stat"><span class="stat-num">{{ len (where .Site.RegularPages "Section" "courses") }}</span><span class="stat-label">Courses</span></div>
+  <div class="stat"><span class="stat-num">{{ len (where .Site.RegularPages "Section" "blog") }}</span><span class="stat-label">Articles</span></div>
+  <div class="stat"><span class="stat-num">4</span><span class="stat-label">Core disciplines</span></div>
+  <div class="stat"><span class="stat-num">1</span><span class="stat-label">Place to build</span></div>
+</div></section>
 
-<section class="section newsletter reveal">
-  <div class="wrap newsletter-inner">
-    <div>
-      <h2>Get new articles &amp; course drops in your inbox</h2>
-      <p>No spam. Unsubscribe anytime.</p>
-    </div>
-    <form class="newsletter-form" action="#" method="post">
-      <input type="email" name="email" placeholder="you@example.com" required>
-      <button type="submit" class="btn btn-primary">Subscribe</button>
-    </form>
+<section class="section"><div class="wrap">
+  <div class="section-head"><div><p class="eyebrow">WHAT WE DO</p><h2>From learning to engineering.</h2></div></div>
+  <div class="service-grid">
+    <a class="service-card" href="{{ "/freelancing/" | relURL }}"><span class="service-icon">⌘</span><h3>Engineering services</h3><p>Custom firmware, IoT solutions, Linux drivers and hardware integration.</p><span class="text-link">Explore services →</span></a>
+    <a class="service-card" href="{{ "/projects/" | relURL }}"><span class="service-icon">▣</span><h3>Project store</h3><p>Discover practical project builds, documentation and implementation resources.</p><span class="text-link">View projects →</span></a>
+    <a class="service-card" href="{{ "/courses/" | relURL }}"><span class="service-icon">⌁</span><h3>Technical courses</h3><p>Learn embedded development with structured, hands-on lessons.</p><span class="text-link">Start learning →</span></a>
   </div>
-</section>
+</div></section>
+
+<section class="section section-alt"><div class="wrap">
+  <div class="section-head"><div><p class="eyebrow">LEARN SOMETHING NEW</p><h2>Featured courses</h2></div><a href="{{ "/courses/" | relURL }}" class="see-all">All courses →</a></div>
+  <div class="card-grid">{{ range first 3 (where .Site.RegularPages "Section" "courses") }}
+    <a class="card course-card" href="{{ .RelPermalink }}"><div class="card-thumb">{{ partial "icon-course.html" . }}</div><div class="card-body">{{ with .Params.level }}<p class="card-meta">{{ . }}</p>{{ end }}<h3>{{ .Title }}</h3><p>{{ .Summary | plainify | truncate 105 }}</p>{{ with .Params.price }}<p class="card-price">{{ . }}</p>{{ end }}</div></a>
+  {{ end }}</div>
+</div></section>
+
+<section class="section"><div class="wrap">
+  <div class="section-head"><div><p class="eyebrow">FROM THE WORKBENCH</p><h2>Latest articles</h2></div><a href="{{ "/blog/" | relURL }}" class="see-all">Read the blog →</a></div>
+  <div class="card-grid">{{ range first 3 (where .Site.RegularPages "Section" "blog") }}
+    <a class="card" href="{{ .RelPermalink }}"><div class="card-thumb">{{ partial "icon-post.html" . }}</div><div class="card-body"><p class="card-meta">{{ .Date.Format "Jan 2, 2006" }}</p><h3>{{ .Title }}</h3><p>{{ .Summary | plainify | truncate 105 }}</p></div></a>
+  {{ end }}</div>
+</div></section>
+<section class="cta-band"><div class="wrap cta-inner"><div><p class="eyebrow">HAVE AN IDEA?</p><h2>Let's build something useful.</h2><p>Tell us about your product, prototype or engineering challenge.</p></div><a href="{{ "/contact/" | relURL }}" class="btn btn-primary">Start a conversation →</a></div></section>
 {{ end }}
