@@ -1,0 +1,11 @@
+{{ define "main" }}
+<section class="page-intro"><div class="wrap"><p class="eyebrow">ADMIN EXPERIENCE · DESIGN PREVIEW</p><h1>{{ .Title }}</h1><p>{{ .Description }}</p><p class="admin-note">This is a visual prototype only. It is not an authenticated admin area and does not expose or change customer, order or content data.</p></div></section>
+<section class="content-section"><div class="wrap">
+<div class="admin-preview">
+<aside class="admin-sidebar"><h3>MichroHelp</h3><p class="admin-note">ADMIN WORKSPACE</p><a href="#overview">Overview</a><a href="#projects">Projects</a><a href="#services">Freelancing</a><a href="#courses">Courses</a><a href="#blog">Blog</a><a href="#gallery">Gallery</a><a href="#orders">Orders</a><a href="#settings">Settings</a></aside>
+<div class="admin-main"><p class="eyebrow">OVERVIEW</p><h2>Welcome back, Admin</h2><p class="admin-note">Your website activity at a glance. Sample metrics are placeholders.</p>
+<div class="admin-kpis"><div class="admin-kpi"><span class="admin-note">PROJECTS</span><strong>--</strong></div><div class="admin-kpi"><span class="admin-note">ORDERS</span><strong>--</strong></div><div class="admin-kpi"><span class="admin-note">ENQUIRIES</span><strong>--</strong></div><div class="admin-kpi"><span class="admin-note">REVENUE</span><strong>--</strong></div></div>
+<div class="admin-content-grid"><section class="admin-widget"><h3>Content management</h3><p>Manage the sections of your website from one place.</p><ul><li>Projects — add descriptions, images and pricing</li><li>Courses — update lessons, syllabus and pricing</li><li>Blog — draft and publish technical articles</li><li>Gallery — organize project photos and videos</li></ul></section><section class="admin-widget"><h3>Business management</h3><p>Planned backend modules.</p><ul><li>Freelance enquiries and client status</li><li>Razorpay orders and payment status</li><li>Customer purchase history</li><li>Secure digital project delivery</li></ul></section></div>
+<div class="admin-security"><strong>Security first</strong><p>This preview is intentionally not connected to admin data. Real admin access will require server-side authentication, a single authorized email, database policies and audit logging.</p></div>
+</div></div></div></section>
+{{ end }}
