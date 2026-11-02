@@ -1,13 +1,13 @@
 <header class="site-header">
   <div class="wrap header-inner">
-    <a href="{{ "/" | relURL }}" class="logo">
-      <img src="{{ "images/brand/logo-full.png" | relURL }}" alt="" class="logo-mark-img">
-      <span class="logo-text">Michro<em>Help</em></span>
+    <a href="{{ "/" | relURL }}" class="logo" aria-label="MichroHelp home">
+      <img src="{{ "images/brand/logo-mark.svg" | relURL }}" alt="" class="logo-mark-img">
+      <span class="logo-text">MICRO<em>HELP</em></span>
     </a>
-    <button class="nav-toggle" aria-label="Toggle menu" onclick="document.querySelector('.site-nav').classList.toggle('open')">
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" onclick="var n=document.querySelector('.site-nav');n.classList.toggle('open');this.setAttribute('aria-expanded',n.classList.contains('open'))">
       <span></span><span></span><span></span>
     </button>
-    <nav class="site-nav">
+    <nav class="site-nav" aria-label="Main navigation">
       <ul>
         {{ range .Site.Menus.main }}
         <li><a href="{{ .URL | relURL }}" {{ if $.IsMenuCurrent "main" . }}class="active"{{ end }}>{{ .Name }}</a></li>
