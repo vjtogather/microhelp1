@@ -93,3 +93,61 @@ collections:
           - { label: "Lesson title", name: "title", widget: "string" }
           - { label: "Video (YouTube video ID)", name: "video", widget: "string", required: false }
       - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "projects"
+    label: "Projects"
+    label_singular: "Project"
+    folder: "content/projects"
+    create: true
+    delete: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Summary", name: "summary", widget: "text" }
+      - { label: "Description", name: "body", widget: "markdown" }
+      - { label: "Cover image", name: "cover", widget: "image", required: false }
+      - { label: "Project category", name: "category", widget: "string", required: false }
+      - { label: "Demo URL", name: "demo_url", widget: "string", required: false }
+      - { label: "Source URL", name: "source_url", widget: "string", required: false }
+      - { label: "Price", name: "price", widget: "string", required: false }
+      - { label: "Featured", name: "featured", widget: "boolean", default: false, required: false }
+
+  - name: "services"
+    label: "Freelancing Services"
+    label_singular: "Service"
+    folder: "content/freelancing"
+    create: true
+    delete: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Summary", name: "summary", widget: "text" }
+      - { label: "Description", name: "body", widget: "markdown" }
+      - { label: "Icon / short label", name: "icon", widget: "string", required: false }
+      - { label: "Starting price", name: "price", widget: "string", required: false }
+      - { label: "Display order", name: "weight", widget: "number", default: 10, required: false }
+
+  - name: "gallery"
+    label: "Gallery"
+    label_singular: "Gallery Item"
+    folder: "content/gallery"
+    create: true
+    delete: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Caption", name: "caption", widget: "text", required: false }
+      - { label: "Image", name: "image", widget: "image" }
+      - { label: "Alt text", name: "alt", widget: "string" }
+      - { label: "Category", name: "category", widget: "string", required: false }
+      - { label: "Display order", name: "weight", widget: "number", default: 10, required: false }
+
+  - name: "messages"
+    label: "Enquiries"
+    label_singular: "Enquiry"
+    files:
+      - name: "enquiry-info"
+        label: "Enquiry management setup"
+        file: "content/admin-preview/enquiry-info.md"
+        fields:
+          - { label: "Instructions", name: "body", widget: "markdown" }
