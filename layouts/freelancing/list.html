@@ -1,0 +1,9 @@
+{{ define "main" }}
+<section class="page-intro"><div class="wrap"><p class="eyebrow">ENGINEERING SERVICES</p><h1>{{ .Title }}</h1><p>{{ .Description }}</p></div></section>
+<section class="content-section"><div class="wrap"><div class="service-list">
+<article class="service-detail"><h2>Embedded Firmware Development</h2><p>Firmware architecture, peripheral drivers, debugging and integration for microcontroller-based products.</p></article>
+<article class="service-detail"><h2>IoT Product Development</h2><p>Connected-device prototypes, sensor integration, communication interfaces and device-side software.</p></article>
+<article class="service-detail"><h2>Linux Device Drivers</h2><p>Driver development, board bring-up support, kernel configuration and hardware-software debugging.</p></article>
+<article class="service-detail"><h2>Hardware & Software Integration</h2><p>Prototype validation, interface testing, documentation and engineering handover.</p></article>
+</div><div class="contact-panel" style="margin-top:28px"><p class="eyebrow">HAVE A REQUIREMENT?</p><h2>Tell me about your project.</h2><p>Share the goal, hardware platform, timeline and current stage. I’ll review the details and respond.</p><a class="btn btn-primary" href="{{ "/contact/" | relURL }}">Send an enquiry →</a></div></div></section>
+{{ end }}
