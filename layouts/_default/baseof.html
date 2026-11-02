@@ -10,7 +10,7 @@
   <script>
     (function () {
       var els = document.querySelectorAll(".reveal");
-      if (!("IntersectionObserver" in window) || !els.length) {
+      if (!( "IntersectionObserver" in window) || !els.length) {
         els.forEach(function (el) { el.classList.add("is-visible"); });
         return;
       }
@@ -25,6 +25,7 @@
       els.forEach(function (el) { observer.observe(el); });
     })();
   </script>
+  <script src="{{ "js/carousel.js" | relURL }}" defer></script>
   <script>
     if ("serviceWorker" in navigator) {
       window.addEventListener("load", function () {
