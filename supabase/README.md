@@ -44,3 +44,7 @@ The migration does not implement checkout, the login UI, or a production admin d
 The first Supabase-connected admin interface is available at `/control/` on the Vercel preview. It supports email magic-link sign-in for an existing user, verifies membership in `admin_users`, and provides create/edit/delete screens for projects, courses, services, blog posts, gallery items and site settings, plus enquiry viewing. It is not linked into the public pages yet; public-site rendering integration and end-to-end testing are still required before production use.
 
 In Supabase Authentication, create/invite the one admin user first, add their UUID to `public.admin_users`, and configure the project's Site URL plus Redirect URLs to include the preview URL and final domain. The panel asks for the project URL and public anon/publishable key; these are public client configuration values. Never enter a service_role key.
+
+## Existing Decap CMS (/admin) additions
+
+The existing Google-authorized Decap CMS now includes Projects, Freelancing Services, and Gallery collections alongside its existing Blog Posts, Courses, Pages, and Site Settings collections. Public Projects, Freelancing, and Gallery listing templates render entries created in those collections. Enquiry records are handled in the Supabase-backed `/control/` panel, not as a fake static CMS collection; contact-form submission still needs to be wired to Supabase before enquiries will appear there.
