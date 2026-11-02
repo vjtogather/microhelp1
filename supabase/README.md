@@ -39,3 +39,8 @@ Do not enable public sign-up for the admin interface. Keep the allowlist to the 
 - Add server-side validation, spam/rate limiting, and audit logging to public endpoints.
 
 The migration does not implement checkout, the login UI, or a production admin dashboard. `/admin-preview/` remains a visual prototype.
+## Admin panel prototype
+
+The first Supabase-connected admin interface is available at `/control/` on the Vercel preview. It supports email magic-link sign-in for an existing user, verifies membership in `admin_users`, and provides create/edit/delete screens for projects, courses, services, blog posts, gallery items and site settings, plus enquiry viewing. It is not linked into the public pages yet; public-site rendering integration and end-to-end testing are still required before production use.
+
+In Supabase Authentication, create/invite the one admin user first, add their UUID to `public.admin_users`, and configure the project's Site URL plus Redirect URLs to include the preview URL and final domain. The panel asks for the project URL and public anon/publishable key; these are public client configuration values. Never enter a service_role key.
