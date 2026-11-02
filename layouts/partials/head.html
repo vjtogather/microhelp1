@@ -12,4 +12,5 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-title" content="MichroHelp">
   <link rel="stylesheet" href="{{ "css/style.css" | relURL }}?v={{ now.Unix }}">
+  {{ if eq .Section "admin-preview" }}<link rel="stylesheet" href="{{ "css/admin-preview.css" | relURL }}?v={{ now.Unix }}">{{ end }}
 </head>
